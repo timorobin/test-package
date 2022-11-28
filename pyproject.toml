@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "test-package"
+version = "0.0.1"
+description = "simple super-package test"
+license = "Proprietary"
+authors = ["Tim Robin <tim@strlt.ai>",]
+readme = "README.md"
+packages = [
+    {include = "sub_pack_1"},
+    {include = "sub_pack_2"},
+]
+
+[tool.poetry.dependencies]
+python = "~3.9"
+pydantic = { version = "*", extras = ["dotenv", "email"] }
+
+[tool.poetry.dev-dependencies]
+ipykernel = { version = "*", extras = [] }
+jupyterlab = { version = "*", extras = [] }
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
