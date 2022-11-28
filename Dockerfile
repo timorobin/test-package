@@ -11,5 +11,5 @@ COPY . .
 
 RUN poetry install --without dev
 
-ENTRYPOINT poetry run python scripts/call_sub_1.py
+ENTRYPOINT ["poetry", "run", "python", "scripts/call_some_f.py"]
 
